@@ -24,6 +24,14 @@ jobs:
       - name: Build Quasar SPA
         run: npx quasar build
 
+      - name: Check dist folder
+        run: ls -R dist
+
+      - name: List build output
+        run: ls -R dist
+
+
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
