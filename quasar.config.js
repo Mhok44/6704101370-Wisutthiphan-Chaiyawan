@@ -66,10 +66,8 @@ export default defineConfig((ctx) => {
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-webpack/quasar-config-file#devserver
     devServer: {
-      server: {
-        type: 'http'
-      },
-      open: true // opens browser window automatically
+      server: {type: 'http'},
+      open: process.env.CI ? false : true // opens browser window automatically
     },
 
     // https://v2.quasar.dev/quasar-cli-webpack/quasar-config-file#framework
@@ -87,9 +85,7 @@ export default defineConfig((ctx) => {
       // directives: [],
 
       // Quasar plugins
-      plugins: [
-        ['Notify']
-      ]
+      plugins: ['Notify']
     },
 
     // animations: 'all', // --- includes all animations
